@@ -1,0 +1,80 @@
+\documentclass[12pt]{article}
+
+\usepackage{fancyhdr,amsmath}
+
+\usepackage{graphicx}
+\usepackage[CJKbookmarks=true,colorlinks,linkcolor=black,anchorcolor=blue,citecolor=blue, urlcolor = blue]{hyperref}
+\usepackage{ctex}
+\usepackage{algorithmic}
+\newcounter{algorithmbis}
+\setcounter{algorithmbis}{0}
+\renewcommand{\thealgorithmbis}{\thesection.\arabic{algorithmbis}}
+\def\algorithmbis{\@ifnextchar[{\@algorithmbisa}{\@algorithmbisb}}
+\def\@algorithmbisa[#1]{%
+  \refstepcounter{algorithmbis}
+  \trivlist
+  \leftmargin\z@
+  \itemindent\z@
+  \labelsep\z@
+  \item[\parbox{\textwidth}{%
+    \hrule
+    \hrule
+    \noindent\strut\textbf{Algorithm \thealgorithmbis} #1
+    \hrule
+  }]\hfil\vskip0em%
+}
+\def\@algorithmbisb{\@algorithmbisa[]}
+\def\endalgorithmbis{\hfil\vskip-1em\hrule\endtrivlist}
+\makeatother
+\begin{document}
+初步思路：
+3D mesh$\rightarrow$ mesh decomposition为大量super-patch$\rightarrow$ 两两merge形成 hierarchical segmentation
+\section{super-patch}
+对应2D image的superpixel，3D mesh decomposition的算法有很多，但是能够得到源代码的工作几乎没有。
+不过，受到近年来比较受欢迎的SLIC superpixel算法\cite{achanta2010slic}的启发，根据\cite{shlafman2003metamorphosis}的工作，
+我们提出一个利用K-means的super-patch算法。对于任意一个triangular mesh model，我们将其看作一个graphical model, 用G(V,E)：每个节点$V_i$代表
+一个face，相互连接的节点表示相互相邻的面，每一条Edge上定义$Distance(V_i, V_j)$为两个face的``距离''：
+$$Distance(V_i, V_j) =a\cdot (1-cos^2(\alpha))+b\cdot Phy_Dist(V_i, V_j)$$
+其中$\alpha$是两个面之间的dihedral angle，$Phy_Dist(V_i, V_j)$是两个面的重心到相邻edge的中点的距离之和。权重$a,b$保证了这个距离在[0,1]之间。
+具体的选取由下段描述的training决定。
+
+\subsection{Training}
+受Berkeley的segementation dataset\cite{MartinFTM01}的影响，2009年Princeton发布了3D segmentation的benchmark\cite{Chen:2009:ABF}，400个model中每个模型都由13位志愿者做出了分割，做为ground truth。任取200个模型作为training set，剩下的其中100个模型作为test set，另外100个模型作为validation set，把training set中的每一对相邻的face提取出来，计算$((1-cos^2(\alpha)), Phy_Dist(V_i, V_j))$，定义$Distance_{groundtruth}$为$V_i, V_j$同属不同segment中的概率（在每个模型中13 个ground truth中label不同的概率）。接下来就可以通过一个简单的regression model来将a, b确定。
+
+（Question：由于在training样本中这个概率为0的次数更多一些(因为boundary上的face毕竟占少数)，可能会对learning产生影响，这点如何克服？将训练集中概率为0的点认为地删除一些可以不可以？）
+\subsection{K-means clustering}
+当distance被定义好后，对于任意模型，每一对相邻的$(V_i, V_j)$之间的distance就可以算出来了。再定义任意两个不相邻的face 之间的距离为
+$$Distance(V_i, V_j)= min_{V_3 \neq V_1,V_2}(Distance(V_1, V_3)+Distance(V_3,V_2)$$
+具体在计算的时候可以运用寻找最短路径的Dijkstra算法，接下来就可以开始做clustering了。由于我们定义的距离函数很简单，而且对初始的over-segmentation的精度没有特别严格的要求（仅仅是想让每个3d模型中的patch个数相同），所以我们取k为一个比较大的值。(100? 200? 需要尝试)
+
+\begin{algorithmic}[1]
+\STATE Initialize Cluster centers $C_k$ by randomly choosing k faces
+\STATE Move the cluster centers to other places if it has a neighbor face whose distance to it >0.5
+\STATE set label $l(i) = -1$ for each face $i$
+\STATE set distance $d(i) = \infty$ for each face $i$
+\STATE set residual error $E= \infty$
+\WHILE{$E$ won't change}
+    \FOR{Each cluster center $C_k$}
+        \FOR{each face $i$}
+            \STATE compute $D=Distance(C_k, i)$
+            \IF{$D<d(i)$}
+                \STATE set $d(i)=D$
+                \STATE set $l(i)=k$
+            \ENDIF
+        \ENDFOR
+    \ENDFOR
+    \STATE Compute new cluster centers(move to the most neighboring face centers)
+    \STATE Compute residual error E(distance between previous centers and recomputed centers)
+\ENDWHILE
+\end{algorithmic}
+
+
+
+(Questions: 有没有可能在一开始initialize cluster center的时候就尽量均匀地sample，而不是随机选取k个点？)
+
+\section{Super-Patch Merging}
+To be continued..
+
+\bibliographystyle{plain}	
+\bibliography{3dseg_ref}	
+\end{document}
