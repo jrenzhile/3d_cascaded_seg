@@ -1,3 +1,12 @@
+% phyDist = computePhyDist(vertex,face,neighbor)
+% 
+% Given vertex, face and neighbor matrix, compute the physical distance
+% of each neighboring face pairs. phyDist(i,j) is the physical distance
+% between face i and face j.
+% 
+% Zhile Ren <jrenzhile@gmail.com>
+% Mar, 2013
+
 function phyDist = computePhyDist(vertex,face,neighbor)
     phyDist = zeros(size(neighbor));
     [m, n] = size(phyDist);
@@ -10,29 +19,25 @@ end
 
 
 function phyDist_between = computePhyDist_between(vertex, face, a, b)
+    vertex_ind_a = face(:,a);
+    vertex_ind_b = face(:,b);
+    inters_ind = intersect(vertex_ind_a,vertex_ind_b);
 
-vertex_ind_a = face(:,a);
-vertex_ind_b = face(:,b);
-inters_ind = intersect(vertex_ind_a,vertex_ind_b);
+    if length(inters_ind)~=2
+        fprintf('Not a neighboring pair!\n');
+        return;
+    end
 
-if length(inters_ind)~=2
-    fprintf('Not a neighboring pair!\n');
-    return;
+    coord_a = zeros(3,1);
+    for ii = 1:3
+        coord_a = coord_a + vertex(:,vertex_ind_a(ii))/3;
+    end
+    coord_b = zeros(3,1);
+    for ii = 1:3
+        coord_b = coord_b + vertex(:,vertex_ind_b(ii))/3;
+    end
+    coord_center = (vertex(:,inters_ind(1))+vertex(:,inters_ind(2)))/2;
+    
+    phyDist_between = sqrt(sum((coord_center-coord_a).^2)) + sqrt(sum((coord_center-coord_b).^2));
 end
 
-
-
-coord_a = zeros(3,1);
-for ii = 1:3
-    coord_a = coord_a + vertex(:,vertex_ind_a(ii))/3;
-end
-coord_b = zeros(3,1);
-for ii = 1:3
-    coord_b = coord_b + vertex(:,vertex_ind_b(ii))/3;
-end
-
-coord_center = (vertex(:,inters_ind(1))+vertex(:,inters_ind(2)))/2;
-
-phyDist_between = sqrt(sum((coord_center-coord_a).^2)) + sqrt(sum((coord_center-coord_b).^2));
-
-end

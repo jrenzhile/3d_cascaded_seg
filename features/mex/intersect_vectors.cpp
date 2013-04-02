@@ -26,24 +26,24 @@ void IntSort(double A[],int n)
 void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 {
 
-  #define NEIGHBOR_OUT plhs[0]
-  #define FACE_IN prhs[0]
-	
+  #define INTERSECT_OUT plhs[0]
+  #define VECTOR_1_IN prhs[0]
+	#define VECTOR_2_IN prhs[1]
+
   double tmp_i[3], tmp_j[3];
-  double *FACE, *NEIGHBOR;
+  double *VECTOR_1, *VECTOR_2;
 
   int i,n,ii,jj,j,tmp;
-	int count_inters;
-	
+	int count_inters,count;
 //  mxArray *NEIGHBOR_OUT_TMP;
     
   if(nrhs != 1) 
       mexErrMsgTxt("Wrong number of input arguments.");
 
   
-  const int M_FACE = mxGetM(FACE_IN);
-	const int N_FACE = mxGetN(FACE_IN);
- 
+   
+  M_FACE = mxGetM(FACE_IN); 
+  N_FACE = mxGetN(FACE_IN);
     
   FACE = mxGetPr(FACE_IN);
 	
@@ -56,25 +56,15 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 	//NEIGHBOR_OUT = NEIGHBOR_OUT_TMP;
   NEIGHBOR = mxGetPr(NEIGHBOR_OUT);   
 
-	int *count;
-	count = (int *)malloc(sizeof(int)*N_FACE);
-	for(i = 0;i<N_FACE;i++)
-			count[i]=0;
 	
 	for(i = 0;i<N_FACE;i++)
 	{
-    if(count[i]>=3)
-			continue;
-		
+		count = 0;
 		for(ii = 0;ii<3;ii++)
 			tmp_i[ii] = FACE[ii+i*M_FACE];
     IntSort(tmp_i, 3);
-    if(count[i]==0)
-			j=0;
-		else
-			j=NEIGHBOR[count[i]+i*M_FACE];
-
-		for(;j<N_FACE;j++)
+		
+		for(j = 0;j<N_FACE;j++)
 		{
 
 			if(j==i)
@@ -100,11 +90,10 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
  
 			if(count_inters ==2)
 			{
-				NEIGHBOR[count[i]+i*M_FACE]=j+1;
-				NEIGHBOR[count[j]+j*M_FACE]=i+1;
-				count[i]++;
-				count[j]++;
-				if(count[i]>=3)
+				NEIGHBOR[count+i*M_FACE]=j+1;
+				
+				count++;
+				if(count>=3)
 					break;
 			}
 		

@@ -16,7 +16,7 @@ for i=1:length(mod_to_train)
     
   [vertex,face] = read_off(sprintf('%s/%d.off',modeldir,mod_to_train(i)));
   faceNorm = compFaceNorm(vertex,face);
-  neighbors = getNeighbors(face);
+  neighbors = getNeighbor(face);
   phyDist = computePhyDist(vertex,face,neighbor);
   
   fprintf('Saved %d\n',i);

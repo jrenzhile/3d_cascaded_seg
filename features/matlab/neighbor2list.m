@@ -1,3 +1,10 @@
+% function neighbor_list = neighbor2list(neighbor)
+% Convert the neighbor matrix to a list of neighbors.
+% (Not enough memory...)
+%
+% Zhile Ren<jrenzhile@gmail.com>
+% Mar, 2013
+
 function neighbor_list = neighbor2list(neighbor)
 
 [m, n] = size(neighbor);

@@ -1,3 +1,11 @@
+% faceNorm = computeFaceNorm(vertex, face);
+% 
+% Given vertex and face matrix, compute the norm of each face
+% Each coloum i represents the norm of face i.
+% 
+% Zhile Ren <jrenzhile@gmail.com>
+% Mar, 2013
+
 function faceNorm = computeFaceNorm(vertex, face, verbose)
 
 if(nargin<3)

@@ -1,14 +1,3 @@
-/*
-faceNorm = compFaceNorm(vertex, face);
-
-Given vertex and face matrix, compute the norm of each face
-Each coloum i represents the norm of face i.
-
-Zhile Ren <jrenzhile@gmail.com>
-Mar, 2013
-*/
-
-
 #include <math.h>
 
 #include "mex.h"
@@ -35,7 +24,10 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
         mexErrMsgTxt("Wrong number of input arguments.");
     else if(nlhs > 1)
         mexErrMsgTxt("Too many output arguments.");
-
+    if(!IS_REAL_2D_FULL_DOUBLE(FACE_IN)) 
+        mexErrMsgTxt("FACE must be a real 2D full double array.");
+    if(!IS_REAL_2D_FULL_DOUBLE(VERTEX_IN)) 
+        mexErrMsgTxt("VERTEX must be a real 2D full double array.");
     
    
     M_FACE = mxGetM(FACE_IN); 

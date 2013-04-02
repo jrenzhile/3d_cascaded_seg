@@ -1,3 +1,11 @@
+% neighbors = get_neighbors_new(face);
+% 
+% Given the face of the model, return the neighboring pairs.
+% Each row j in coloum i represent a neighboring face pair (i,j)
+% 
+% Zhile Ren <jrenzhile@gmail.com>
+% Mar, 2013
+
 function  neighbors = get_neighbors_new(face)
 
 nFace  = size(face,2);
