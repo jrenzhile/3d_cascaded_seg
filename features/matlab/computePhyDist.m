@@ -2,7 +2,7 @@
 % 
 % Given vertex, face and neighbor matrix, compute the physical distance
 % of each neighboring face pairs. phyDist(i,j) is the physical distance
-% between face i and face j.
+% between face neighbor(i,j) and face j.
 % 
 % Zhile Ren <jrenzhile@gmail.com>
 % Mar, 2013
