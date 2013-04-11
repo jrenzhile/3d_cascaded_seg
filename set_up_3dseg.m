@@ -1,10 +1,14 @@
 addpath(genpath('C:\Users\luvegood\Documents\MATLAB\toolbox_graph'));
-addpath(genpath('D:\github\3d_cascaded_seg\features'));
-addpath(genpath('D:\github\3d_cascaded_seg\super_patch'));
-addpath(genpath('D:\github\3d_cascaded_seg\visualization'));
+addpath(genpath(fullfile(pwd,'features')));
+addpath(genpath(fullfile(pwd,'super_patch')));
+addpath(genpath(fullfile(pwd,'visualization')));
+addpath(genpath(fullfile(pwd,'learning')));
 addpath(genpath('C:\Users\luvegood\Documents\MATLAB\minFunc\minFunc'));
-disp('Path set up done!');
+fprintf('Path set up done!\n');
 
-cd features\mex\
+cd features/mex/
 mex compFaceNorm.cpp
 mex getNeighbor.cpp
+cd ..
+cd ..
+fprintf('Mex file compiled!\n');
