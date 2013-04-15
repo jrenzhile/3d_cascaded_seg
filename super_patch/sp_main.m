@@ -5,7 +5,7 @@ function seginfo = sp_main(face, vertex, sp_num, verbose)
 % 
 % Zhile Ren<jrenzhile@gmail.com>
 % Apr, 2013
-
+sp_tic = tic;
 [neighbors, dist, faceCenter] = sp_data_init(vertex,face, verbose);
 
 num_face = size(face,2); %number of faces
@@ -18,7 +18,7 @@ faceCenter_init = faceCenter(:,init_center); %initial face centers
 done = 0;
 err_init = 0;
 iteration_count = 0;
-tolerance = 10;
+tolerance = 0.001;
 
 while ~done
     iteration_count = iteration_count+1;
@@ -27,7 +27,7 @@ while ~done
         fprintf('Iteration #%d:\n',iteration_count);
     end
     for i = 1:length(init_center)
-        minDist_single = spfa_m(neighbors, dist, init_center(i)); %spfa
+        minDist_single = spfa_c(neighbors, dist, init_center(i)); %spfa
         for ii = 1:num_face %assigning lables in one iteration
             if minDist(ii)>minDist_single(ii)
                 minDist(ii) = minDist_single(ii);
@@ -47,6 +47,11 @@ while ~done
         [~,new_center(i)] = min(dist_to_centers);
     end
     faceCenter_new = faceCenter(:, new_center);
+    
+    for i = 1:length(init_center)
+        seginfo(seginfo==init_center(i)) = new_center(i);
+    end
+    
     if verbose
        tmp_toc = toc(iteration_tic)-tmp_toc;
        fprintf('Done updating centers: %.2fs\n',tmp_toc);
@@ -65,3 +70,7 @@ while ~done
        fprintf('Iteration #%d done: %.2fs\n',iteration_count, toc(iteration_tic));
     end
 end
+
+    if verbose
+       fprintf('ALL Done: %.2fs\n', toc(sp_tic));
+    end

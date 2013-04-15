@@ -3,6 +3,7 @@ addpath(genpath(fullfile(pwd,'features')));
 addpath(genpath(fullfile(pwd,'super_patch')));
 addpath(genpath(fullfile(pwd,'visualization')));
 addpath(genpath(fullfile(pwd,'learning')));
+addpath(genpath(fullfile(pwd,'helper')));
 addpath(genpath('C:\Users\luvegood\Documents\MATLAB\minFunc\minFunc'));
 fprintf('Path set up done!\n');
 
@@ -11,4 +12,8 @@ mex compFaceNorm.cpp
 mex getNeighbor.cpp
 cd ..
 cd ..
+cd super_patch/
+mex spfa_c.cpp
+cd ..
+
 fprintf('Mex file compiled!\n');
