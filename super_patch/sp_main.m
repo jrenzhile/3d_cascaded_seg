@@ -5,6 +5,7 @@ function seginfo = sp_main(face, vertex, sp_num, verbose)
 % 
 % Zhile Ren<jrenzhile@gmail.com>
 % Apr, 2013
+
 sp_tic = tic;
 [neighbors, dist, faceCenter] = sp_data_init(vertex,face, verbose);
 
