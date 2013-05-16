@@ -72,6 +72,20 @@ while ~done
     end
 end
 
-    if verbose
-       fprintf('ALL Done: %.2fs\n', toc(sp_tic));
+uniq_seg = unique(seginfo);
+done_seg = zeros(size(seginfo));
+
+for i = 1:length(uniq_seg)
+    ind_seg = find(seginfo==uniq_seg(i));
+    for ii = 1:length(ind_seg)
+        if done_seg(ind_seg)==0
+            done_seg(ind_seg) = 1;
+            seginfo(ind_seg) = i;
+        end
     end
+end
+
+
+if verbose
+   fprintf('ALL Done: %.2fs\n', toc(sp_tic));
+end
