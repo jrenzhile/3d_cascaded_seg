@@ -17,6 +17,10 @@ mod_to_proc = mod_to_proc(3:end);
 
 
 for i=1:length(mod_to_proc)
+  if exist(sprintf('%s/%s_%d.mat',resdir,mod_name,sp_num),'file')==2
+      fprintf('%d Already Done', mod_to_proc(i));
+      continue;
+  end
   time_spent_i = tic;
   [vertex,face] = read_off(sprintf('%s',mod_to_proc(i).name));
 
