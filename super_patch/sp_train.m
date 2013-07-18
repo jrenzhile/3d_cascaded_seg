@@ -63,8 +63,8 @@ end
 % X = feature_matrix_to_train(:,1:2);
 % y = feature_matrix_to_train(:,3);
 
-X = X(1:2500000,:);
-y = y(1:2500000);
+% X = X(1:2500000,:);
+% y = y(1:2500000);
 y(y>=0.5) = 1;
 y(y<0.5) = 0;
 
