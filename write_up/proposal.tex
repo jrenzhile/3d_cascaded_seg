@@ -39,13 +39,12 @@ $$Distance(V_i, V_j) =a\cdot (1-cos^2(\alpha))+b\cdot Phy_Dist(V_i, V_j)$$
 具体的选取由下段描述的training决定。
 
 \subsection{Training}
-受Berkeley的segementation dataset\cite{MartinFTM01}的影响，2009年Princeton发布了3D segmentation的benchmark\cite{Chen:2009:ABF}，400个model中每个模型都由13位志愿者做出了分割，做为ground truth。任取200个模型作为training set，剩下的其中100个模型作为test set，另外100个模型作为validation set，把training set中的每一对相邻的face提取出来，计算$((1-cos^2(\alpha)), Phy_Dist(V_i, V_j))$，定义$Distance_{groundtruth}$为$V_i, V_j$同属不同segment中的概率（在每个模型中13 个ground truth中label不同的概率）。接下来就可以通过一个简单的regression model来将a, b确定。
+受Berkeley的segementation dataset\cite{MartinFTM01}的影响，2009年Princeton发布了3D segmentation的benchmark\cite{Chen:2009:ABF}，400个model中每个模型都由13位志愿者做出了分割，做为ground truth。任取200个模型作为training set，剩下的其中100个模型作为test set，另外100个模型作为validation set，把training set中的每一对相邻的face提取出来，计算$((1-cos^2(\alpha)), Phy_Dist(V_i, V_j))$，定义$Distance_{groundtruth}$为$V_i, V_j$同属不同segment中的概率（在每个模型中13 个ground truth中label不同的概率）。接下来就可以通过一个简单的logistic regression 来将a, b确定。
 
-（Question：由于在training样本中这个概率为0的次数更多一些(因为boundary上的face毕竟占少数)，可能会对learning产生影响，这点如何克服？将训练集中概率为0的点认为地删除一些可以不可以？）
 \subsection{K-means clustering}
 当distance被定义好后，对于任意模型，每一对相邻的$(V_i, V_j)$之间的distance就可以算出来了。再定义任意两个不相邻的face 之间的距离为
 $$Distance(V_i, V_j)= min_{V_3 \neq V_1,V_2}(Distance(V_1, V_3)+Distance(V_3,V_2)$$
-具体在计算的时候可以运用寻找最短路径的Dijkstra算法，接下来就可以开始做clustering了。由于我们定义的距离函数很简单，而且对初始的over-segmentation的精度没有特别严格的要求（仅仅是想让每个3d模型中的patch个数相同），所以我们取k为一个比较大的值。(100? 200? 需要尝试)
+具体在计算的时候可以运用寻找最短路径的Shortest Path Faster Algorithm(SPFA)算法，接下来就可以开始做clustering了。由于我们定义的距离函数很简单，而且对初始的over-segmentation的精度没有特别严格的要求（仅仅是想让每个3d 模型中的patch个数相同），所以我们取k为一个比较大的值。(2000)
 
 \begin{algorithmic}[1]
 \STATE Initialize Cluster centers $C_k$ by randomly choosing k faces
@@ -69,8 +68,6 @@ $$Distance(V_i, V_j)= min_{V_3 \neq V_1,V_2}(Distance(V_1, V_3)+Distance(V_3,V_2
 \end{algorithmic}
 
 
-
-(Questions: 有没有可能在一开始initialize cluster center的时候就尽量均匀地sample，而不是随机选取k个点？)
 
 \section{Super-Patch Merging}
 To be continued..

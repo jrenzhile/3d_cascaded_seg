@@ -1,0 +1,13 @@
+This is BibTeX, Version 0.99dThe top-level auxiliary file: proposal.aux
+The style file: plain.bst
+I couldn't open database file 3dseg_ref.bib
+---line 25 of file proposal.aux
+ : \bibdata{3dseg_ref
+ :                   }
+I'm skipping whatever remains of this command
+I found no database files---while reading file proposal.aux
+Warning--I didn't find a database entry for "achanta2010slic"
+Warning--I didn't find a database entry for "shlafman2003metamorphosis"
+Warning--I didn't find a database entry for "MartinFTM01"
+Warning--I didn't find a database entry for "Chen:2009:ABF"
+(There were 2 error messages)
