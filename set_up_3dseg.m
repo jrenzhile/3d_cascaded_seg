@@ -5,7 +5,7 @@ addpath(genpath(fullfile(pwd,'visualization')));
 addpath(genpath(fullfile(pwd,'learning')));
 addpath(genpath(fullfile(pwd,'helper')));
 addpath(genpath(fullfile(pwd,'cascade_seg')));
-addpath(genpath(fullfile(pwd,'measures')));
+addpath(genpath(fullfile(pwd,'measures'))); 
 addpath(genpath(fullfile(pwd,'Descriptors')));
 addpath(genpath(fullfile(pwd,'others')));
 addpath(genpath(fullfile(pwd,'../toolbox_graph')));
