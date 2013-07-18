@@ -1,6 +1,6 @@
 function ri = rand_index(seginfo,gtseg,n_count)
 
-% function ri = rand_index(suppix1,suppix2)
+% function ri = rand_index(seginfo,gtseg)
 % Given two segmentation maps, compute the random index score between them.
 % Random Index measures the probability that an arbitrary 
 % pair of samples have consistent labels in the two partitions
