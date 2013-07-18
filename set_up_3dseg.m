@@ -11,6 +11,7 @@ addpath(genpath(fullfile(pwd,'others')));
 addpath(genpath(fullfile(pwd,'../toolbox_graph')));
 addpath(genpath(fullfile(pwd,'../minFunc')));
 addpath(pwd);
+
 % addpath(genpath('C:\Users\luvegood\Documents\MATLAB\minFunc\minFunc'));
 fprintf('Path set up done!\n');
 
