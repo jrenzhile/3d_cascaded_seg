@@ -8,7 +8,7 @@ addpath(genpath(fullfile(pwd,'cascade_seg')));
 addpath(genpath(fullfile(pwd,'measures')));
 addpath(genpath(fullfile(pwd,'Descriptors')));
 addpath(genpath(fullfile(pwd,'others')));
-
+addpath(pwd);
 % addpath(genpath('C:\Users\luvegood\Documents\MATLAB\minFunc\minFunc'));
 fprintf('Path set up done!\n');
 
