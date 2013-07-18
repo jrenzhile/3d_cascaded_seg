@@ -37,8 +37,8 @@
 不过，受到近年来比较受欢迎的SLIC superpixel算法\cite{achanta2010slic}的启发，根据\cite{shlafman2003metamorphosis}的工作，
 我们提出一个利用K-means的super-patch算法。对于任意一个triangular mesh model，标准化后，我们将其看作一个graphical model, 用G(V,E)：每个节点$V_i$代表
 一个face，相互连接的节点表示相互相邻的面，每一条Edge上定义$Distance(V_i, V_j)$为两个face的``距离''：
-$$Distance(V_i, V_j) =a\cdot (1-cos^2(\alpha))+b\cdot Phy_Dist(V_i, V_j)$$
-其中$\alpha$是两个面之间的dihedral angle，$Phy_Dist(V_i, V_j)$是两个面的重心到相邻edge的中点的距离之和。权重$a,b$保证了这个距离在[0,1]之间。
+$$Distance(V_i, V_j) =a\cdot (1-cos^2(\alpha))+b\cdot Phy\_Dist(V_i, V_j)$$
+其中$\alpha$是两个面之间的dihedral angle，$Phy\_Dist(V_i, V_j)$是两个面的重心到相邻edge的中点的距离之和。权重$a,b$保证了这个距离在[0,1]之间。
 具体的选取由下段描述的training决定。
 
 \subsection{Training}
@@ -46,12 +46,11 @@ $$Distance(V_i, V_j) =a\cdot (1-cos^2(\alpha))+b\cdot Phy_Dist(V_i, V_j)$$
 
 \subsection{K-means clustering}
 当distance被定义好后，对于任意模型，每一对相邻的$(V_i, V_j)$之间的distance就可以算出来了。再定义任意两个不相邻的face 之间的距离为
-$$Distance(V_i, V_j)= min_{V_3 \neq V_1,V_2}(Distance(V_1, V_3)+Distance(V_3,V_2)$$
+$$Distance(V_i, V_j)= min_{V_3 \neq V_1,V_2}(Distance(V_1, V_3)+Distance(V_3,V_2))$$
 在计算的时候可以运用寻找最短路径的Shortest Path Faster Algorithm(SPFA)算法，接下来就可以开始做clustering了。由于我们定义的距离函数很简单，而且对初始的over-segmentation的精度没有特别严格的要求（仅仅是想让每个3d 模型中的patch个数相同），所以我们取k为一个比较大的值。(k=2000)
 
 \begin{algorithmic}[1]
 \STATE Initialize Cluster centers $C_k$ by randomly choosing k faces
-\STATE Move the cluster centers to other places if it has a neighbor face whose distance to it $>$0.5
 \STATE set label $l(i) = -1$ for each face $i$
 \STATE set distance $d(i) = \infty$ for each face $i$
 \STATE set residual error $E= \infty$
@@ -75,7 +74,7 @@ $$Distance(V_i, V_j)= min_{V_3 \neq V_1,V_2}(Distance(V_1, V_3)+Distance(V_3,V_2
 \section{Super-Patch Merging}
 
 \subsection{Boundary Recall Measurement}
-在2维中，boundary-recall的定义为：
+To be continued..
 
 \subsection{Cascaded algorithm for super-patch agglomeration}
 To be continued..
@@ -90,25 +89,19 @@ To be continued..
 \begin{appendices}
 整个project均在F盘上进行操作。
 \section{数据说明}
-Princeton's segmentation dataset 存放在
-\begin{verbatim}
-F:\MeshsegBenchmark-1.0
-\end{verbatim}
-data/\{train, test, val\}.txt 分别为training, test, validation set
-
-data/off 中存放了所有3维模型，共380个，每10个为一个类别（人，椅子，杯子，等等。。）
-
-data/seg 中存放了各个算法的分割结果，其中Benchmark为ground truth, super\_patch 中存放了super-patch 算法的结果，每个模型2000个分割。
+\begin{itemize}
+  \item Princeton's segmentation dataset 存放在F:/MeshsegBenchmark-1.0 中
+  \item data/\{train, test, val\}.txt 分别为training, test, validation set
+  \item data/off 中存放了所有3维模型，共380个，每10个为一个类别（人，椅子，杯子，等等。。）
+  \item data/seg 中存放了各个算法的分割结果，其中Benchmark为ground truth, super\_patch 中存放了super-patch 算法的结果，每个模型2000个分割。
+\end{itemize}
 
 这些是所有需要用到的东西。。
 
 
 \section{代码说明}
-代码保存在
-\begin{verbatim}
-F:\github\3d_cascaded_seg
-\end{verbatim}
-其中的readme文件介绍了各个目录的组织情况。
+代码保存在F:/github/3d\_cascaded\_seg 其中的readme文件介绍了各个目录的组织情况，全部代码在这里托管
+\url{https://github.com/luvegood/3d_cascaded_seg}
 \end{appendices}
 
 \bibliographystyle{plain}	
