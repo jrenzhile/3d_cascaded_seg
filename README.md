@@ -17,10 +17,10 @@ TBA
 
 Directories:
 ---------------
-/Descriptors: Various discriptors for 3d models: HKS, ShapeDNA, etc.
-/example: example files to test the algorithm
-/features: features for 3d models
-/helper: some helper function
-/others: other functions for regular use.
-/visualization: functions to plot the segmentation results
-/super_patch: algorithms for super_patch calculation.
+* /Descriptors: Various discriptors for 3d models: HKS, ShapeDNA, etc.
+* /example: example files to test the algorithm
+* /features: features for 3d models
+* /helper: some helper function
+* /others: other functions for regular use.
+* /visualization: functions to plot the segmentation results
+* /super_patch: algorithms for super_patch calculation.
