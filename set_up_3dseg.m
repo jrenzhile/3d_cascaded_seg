@@ -23,5 +23,5 @@ cd ..
 cd measures/mex
 mex randindex.cpp
 cd ..
-
+cd ..
 fprintf('Mex file compiled!\n');

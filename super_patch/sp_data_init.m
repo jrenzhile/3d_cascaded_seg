@@ -8,6 +8,9 @@ function [neighbors, dist, faceCenter] = sp_data_init(vertex,face, verbose)
 % Zhile Ren<jrenzhile@gmail.com>
 % Apr, 2013
 
+vertex_max = max(vertex(:));
+vertex = vertex/vertex_max;
+
 if verbose
     fprintf('Initializing Data..\n');
 end
@@ -39,7 +42,9 @@ if verbose
     fprintf('Done Computing dihedral angles: %.2fs\n',tmp_toc);
 end
 
-b =[-6.7985;4.3733;52.6669];
+%b =[-6.7985;4.3733;52.6669];
+b = [-6.4923;4.4844;15.7339];
+
 dist = sigmoid(b(1) + b(2)*dihedralAngle + b(3)*phyDist);
 if verbose
     tmp_toc = toc(tmp_tic)-tmp_toc;
