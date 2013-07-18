@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2013.7.18)  18 JUL 2013 17:57
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2013.7.18)  18 JUL 2013 18:33
 entering extended mode
 **F:/github/3d_cascaded_seg/write_up/proposal.tex
 (F:/github/3d_cascaded_seg/write_up/proposal.tex
@@ -495,117 +495,124 @@ Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 \ALC@tlm=\skip62
 \algorithmicindent=\skip63
 )
-\c@algorithmbis=\count192
+(D:\CTEX\MiKTeX\tex\latex\appendix\appendix.sty
+Package: appendix 2009/09/02 v1.2b extra appendix facilities
+\c@@pps=\count192
+\c@@ppsavesec=\count193
+\c@@ppsaveapp=\count194
+)
+\c@algorithmbis=\count195
 
 (F:\github\3d_cascaded_seg\write_up\proposal.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for C00/song/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for C05/song/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for C09/song/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for C10/song/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for C20/song/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for C19/song/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for C40/song/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for C42/song/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for C43/song/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for C50/song/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for C52/song/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for C49/song/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for C60/mj/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for C61/mj/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for C63/mj/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for C64/mj/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for C65/mj/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for C70/song/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for C31/song/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for C32/song/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for C33/song/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for C34/song/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for C35/song/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for C36/song/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for C37/song/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for C80/song/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for C81/song/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for C01/song/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for C11/song/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for C21/song/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for C41/song/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for C62/song/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for C00/song/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for C05/song/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for C09/song/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for C10/song/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for C20/song/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for C19/song/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for C40/song/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for C42/song/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for C43/song/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for C50/song/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for C52/song/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for C49/song/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for C60/mj/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for C61/mj/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for C63/mj/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for C64/mj/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for C65/mj/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for C70/song/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for C31/song/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for C32/song/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for C33/song/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for C34/song/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for C35/song/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for C36/song/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for C37/song/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for C80/song/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for C81/song/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for C01/song/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for C11/song/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for C21/song/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for C41/song/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for C62/song/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
 
 (D:\CTEX\MiKTeX\tex\context\base\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count193
+\scratchcounter=\count196
 \scratchdimen=\dimen153
 \scratchbox=\box38
-\nofMPsegments=\count194
-\nofMParguments=\count195
+\nofMPsegments=\count197
+\nofMParguments=\count198
 \everyMPshowfont=\toks20
-\MPscratchCnt=\count196
+\MPscratchCnt=\count199
 \MPscratchDim=\dimen154
-\MPnumerator=\count197
-\makeMPintoPDFobject=\count198
+\MPnumerator=\count200
+\makeMPintoPDFobject=\count201
 \everyMPtoPDFconversion=\toks21
 )
 \AtBeginShipoutBox=\box39
-Package hyperref Info: Link coloring ON on input line 29.
+Package hyperref Info: Link coloring ON on input line 30.
  (D:\CTEX\MiKTeX\tex\latex\hyperref\nameref.sty
 Package: nameref 2010/04/30 v2.40 Cross-referencing by name of section
 
 (D:\CTEX\MiKTeX\tex\generic\oberdiek\gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count199
+Normal \count register pool exhausted, switching to extended pool.
+\c@section@level=\count277
 )
-LaTeX Info: Redefining \ref on input line 29.
-LaTeX Info: Redefining \pageref on input line 29.
-LaTeX Info: Redefining \nameref on input line 29.
+LaTeX Info: Redefining \ref on input line 30.
+LaTeX Info: Redefining \pageref on input line 30.
+LaTeX Info: Redefining \nameref on input line 30.
 
 (F:\github\3d_cascaded_seg\write_up\proposal.out)
 (F:\github\3d_cascaded_seg\write_up\proposal.out)
@@ -620,30 +627,15 @@ File: extended.enc 2008/12/29 4.8.2
 (D:\CTEX\MiKTeX\tex\latex\cjk\extended.chr
 File: extended.chr 2008/12/29 4.8.2
 )
-LaTeX Font Info:    Try loading font information for C19+rm on input line 30.
+LaTeX Font Info:    Try loading font information for C19+rm on input line 32.
 
 (D:\CTEX\MiKTeX\tex\latex\ctex\fd\c19rm.fd
 File: c19rm.fd 2007/05/06 v0.8a ctex font definition file
 )
 Package CJKpunct Info: punctuation spaces for family 'zhsong' do not exist. Use
- family 'def' instead. on input line 30.
+ family 'def' instead. on input line 32.
 
-
-LaTeX Warning: Citation `achanta2010slic' on page 1 undefined on input line 34.
-
-
-
-LaTeX Warning: Citation `shlafman2003metamorphosis' on page 1 undefined on inpu
-t line 34.
-
-
-LaTeX Warning: Citation `MartinFTM01' on page 1 undefined on input line 42.
-
-
-LaTeX Warning: Citation `Chen:2009:ABF' on page 1 undefined on input line 42.
-
-
-Overfull \hbox (10.45308pt too wide) in paragraph at lines 42--43
+Overfull \hbox (9.95302pt too wide) in paragraph at lines 45--46
 []\C19/rm/m/n/12/55 …\OT1/cmr/m/n/12 Berkeley\C19/rm/m/n/12/40 \OT1/cmr/m/n/12
  segementation dataset[[]]\C19/rm/m/n/12/40  \C19/rm/m/n/12/62 K \C19/rm/m/n/1
 2/59 è|\C19/rm/m/n/12/26 ß| \OT1/cmr/m/n/12 2009\C19/rm/m/n/12/51 c\OT1/cmr/m/n
@@ -653,34 +645,35 @@ Overfull \hbox (10.45308pt too wide) in paragraph at lines 42--43
 
 [1
 
-] [2] (F:\github\3d_cascaded_seg\write_up\proposal.bbl
+] [2]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 97.
+ (D:\CTEX\MiKTeX\tex\latex\base\omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 97.
+ [3]
+(F:\github\3d_cascaded_seg\write_up\proposal.bbl) [4]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 117.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 117.
 
-LaTeX Warning: Empty `thebibliography' environment on input line 3.
-
-) [3]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 77.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 77.
- (F:\github\3d_cascaded_seg\write_up\proposal.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 77.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 77.
+(F:\github\3d_cascaded_seg\write_up\proposal.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 117.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 117.
 Package rerunfilecheck Info: File `proposal.out' has not changed.
-(rerunfilecheck)             Checksum: 9CCB753E1ED5C33BE2DBB2BD32856ABE;228.
-
-
-LaTeX Warning: There were undefined references.
-
+(rerunfilecheck)             Checksum: 726D43CC1C5150B02240E9281222FC48;538.
  ) 
 Here is how much of TeX's memory you used:
- 12797 strings out of 495354
- 198126 string characters out of 3183859
- 273712 words of memory out of 3000000
- 15712 multiletter control sequences out of 15000+200000
- 18063 words of font info for 63 fonts, out of 3000000 for 9000
+ 13005 strings out of 495354
+ 201313 string characters out of 3183859
+ 276299 words of memory out of 3000000
+ 15895 multiletter control sequences out of 15000+200000
+ 21567 words of font info for 75 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 34i,6n,43p,879b,1172s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/s
-imsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows
-/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:
+ 34i,6n,43p,879b,1062s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/s
+imhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows
+/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simsun.ttc><C:
 /Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun
 .ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Font
 s/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Wind
@@ -689,17 +682,21 @@ ows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc>
 sun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/F
 onts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/W
 indows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.t
-tc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><D:/CTEX/MiKTeX/fo
-nts/type1/public/amsfonts/cm/cmbx12.pfb><D:/CTEX/MiKTeX/fonts/type1/public/amsf
-onts/cm/cmmi12.pfb><D:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><D:
-/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><D:/CTEX/MiKTeX/fonts/typ
-e1/public/amsfonts/cm/cmr12.pfb><D:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/
-cmr6.pfb><D:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><D:/CTEX/MiKTe
-X/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/CTEX/MiKTeX/fonts/type1/public/
-amsfonts/cm/cmsy8.pfb>
-Output written on proposal.pdf (3 pages, 217752 bytes).
+tc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/
+simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Window
+s/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C
+:/Windows/Fonts/simsun.ttc><D:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx1
+2.pfb><D:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><D:/CTEX/MiKTeX
+/fonts/type1/public/amsfonts/cm/cmmi8.pfb><D:/CTEX/MiKTeX/fonts/type1/public/am
+sfonts/cm/cmr10.pfb><D:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><D
+:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><D:/CTEX/MiKTeX/fonts/typ
+e1/public/amsfonts/cm/cmr8.pfb><D:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/c
+msy10.pfb><D:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><D:/CTEX/MiK
+TeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><D:/CTEX/MiKTeX/fonts/type1/publi
+c/amsfonts/cm/cmtt12.pfb>
+Output written on proposal.pdf (4 pages, 275300 bytes).
 PDF statistics:
- 224 PDF objects out of 1000 (max. 8388607)
- 27 named destinations out of 1000 (max. 500000)
- 33 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 296 PDF objects out of 1000 (max. 8388607)
+ 37 named destinations out of 1000 (max. 500000)
+ 73 words of extra memory for PDF output out of 10000 (max. 10000000)
 

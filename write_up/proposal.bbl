@@ -1,3 +1,29 @@
-\begin{thebibliography}{}
+\begin{thebibliography}{1}
+
+\bibitem{achanta2010slic}
+Radhakrishna Achanta, Appu Shaji, Kevin Smith, Aurelien Lucchi, Pascal Fua, and
+  Sabine S{\"u}sstrunk.
+\newblock Slic superpixels.
+\newblock {\em {\'E}cole Polytechnique F{\'e}d{\'e}ral de Lausssanne (EPFL),
+  Tech. Rep}, 149300, 2010.
+
+\bibitem{Chen:2009:ABF}
+Xiaobai Chen, Aleksey Golovinskiy, and Thomas Funkhouser.
+\newblock A benchmark for {3D} mesh segmentation.
+\newblock {\em ACM Transactions on Graphics (Proc. SIGGRAPH)}, 28(3), August
+  2009.
+
+\bibitem{MartinFTM01}
+D.~Martin, C.~Fowlkes, D.~Tal, and J.~Malik.
+\newblock A database of human segmented natural images and its application to
+  evaluating segmentation algorithms and measuring ecological statistics.
+\newblock In {\em Proc. 8th Int'l Conf. Computer Vision}, volume~2, pages
+  416--423, July 2001.
+
+\bibitem{shlafman2003metamorphosis}
+Shymon Shlafman, Ayellet Tal, and Sagi Katz.
+\newblock Metamorphosis of polyhedral surfaces using decomposition.
+\newblock In {\em Computer Graphics Forum}, volume~21, pages 219--228. Wiley
+  Online Library, 2003.
 
 \end{thebibliography}
