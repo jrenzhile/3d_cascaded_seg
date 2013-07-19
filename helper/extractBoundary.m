@@ -8,6 +8,7 @@ function edges = extractBoundary(vertex, face, seginfo)
 
 unique_segs = unique(seginfo);
 edges = compute_edges(face);
+
 for i = 1:length(unique_segs)
    face_i = face(:,seginfo==unique_segs(i));
    e2f = compute_edge_face_ring(face_i);
