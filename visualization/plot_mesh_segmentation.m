@@ -19,5 +19,4 @@ set(h,'EdgeColor','none');
 
 
 axis off;
-
-axis equal;
+axis image;
