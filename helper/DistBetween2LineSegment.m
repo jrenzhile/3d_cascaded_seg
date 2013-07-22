@@ -25,11 +25,13 @@ function distance = DistBetween2LineSegment(p1, p2, p3, p4)
     v = p3 - p4;
     w = p2 - p4;
     
-    a = dot(u,u);
-    b = dot(u,v);
-    c = dot(v,v);
-    d = dot(u,w);
-    e = dot(v,w);
+    a = u*u';%dot(u,u);
+    b = u*v';%dot(u,v);
+    c = v*v';%dot(v,v);
+    d = u*w';%dot(u,w);
+    e = v*w';%dot(v,w);
+
+
     D = a*c - b*b;
     sD = D;
     tD = D;
