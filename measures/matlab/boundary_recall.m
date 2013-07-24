@@ -9,7 +9,7 @@ dist_below_tolerance = 0;
 
 for j = 1:size(edge_gt, 2);
     for i = 1:size(edge_seg,2)
-        dist = DistBetween2LineSegment(vertex(:,edge_seg(1,i))', vertex(:,edge_seg(2,i))',...
+        dist = DistBetween2LineSegment_mex(vertex(:,edge_seg(1,i))', vertex(:,edge_seg(2,i))',...
             vertex(:,edge_gt(1,j))',vertex(:,edge_gt(2,j))');
         if dist<tolerance
             dist_below_tolerance = dist_below_tolerance+1;

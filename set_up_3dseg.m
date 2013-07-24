@@ -27,4 +27,8 @@ cd measures/mex
 mex randindex.cpp
 cd ..
 cd ..
+cd helper
+mex DistBetween2LineSegment_mex.cpp
+cd ..
+
 fprintf('Mex file compiled!\n');

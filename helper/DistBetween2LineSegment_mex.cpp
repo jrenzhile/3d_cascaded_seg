@@ -16,8 +16,8 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
    #define SMALL_NUM 0.00000001
    
 	double *P1, *P2, *P3, *P4, *DISTANCE;
-	double u[3], v[3], w[3];
-    double a,b,c,d,e,D,sN, sD, tD, tN;
+	double u[3], v[3], w[3], dP[3];
+    double a,b,c,d,e,D,sN, sD, tD, tN, sc, tc;
 	
     int i,j,k;
     
@@ -57,7 +57,7 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
     sD = D;
     tD = D;
     
-    if(D<SMALL_N UM)
+    if(D<SMALL_NUM)
     {
         sN = 0.0;
         sD = 1.0;
@@ -68,9 +68,66 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
     {
         sN = b*e - c*d;
         tN = a*e - b*d;
-        
+        if(sN<0.0)
+        {
+            sN = 0.0;
+            tN = e;
+            tD = c;
+        }
+        else if(sN>sD)
+        {
+            sN = sD;
+            tN = e + b;
+            tD = c;
+        }
     }
     
+    if (tN<0.0)
+    {
+        tN = 0.0;
+        if(-d<0.0)
+            sN = 0.0;
+        else if(-d>a)
+            sN = sD;
+        else
+        {
+            sN = -d;
+            sD = a;
+        }
+    }
+    else if(tN>tD)
+    {
+        tN = tD;
+        if((-d+b)<0.0)
+            sN = 0;
+        else if((-d+b)>a)
+            sN = sD;
+        else
+        {
+            sN = -d+b;
+            sD = a;
+        }
+    }
+    
+    if (fabs(sN)<SMALL_NUM)
+        sc = 0.0;
+    else
+        sc = sN/sD;
+    
+    if(fabs(tN)<SMALL_NUM)
+        tc = 0.0;
+    else
+        tc = tN/tD;
+    
+    for(i=0;i<3;i++)
+        dP[i] = w[i] + sc*u[i]-tc*v[i];
+
+    
+    DISTANCE[0] = 0;
+    for(i=0;i<3;i++)
+        DISTANCE[0] += dP[i]*dP[i];
+    
+    DISTANCE[0] = sqrt(DISTANCE[0]);
     
     
 //	 mxArray *N_COUNT_MX;
