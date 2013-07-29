@@ -8,8 +8,10 @@ addpath(genpath(fullfile(pwd,'cascade_seg')));
 addpath(genpath(fullfile(pwd,'measures'))); 
 addpath(genpath(fullfile(pwd,'Descriptors')));
 addpath(genpath(fullfile(pwd,'others')));
+addpath(genpath(fullfile(pwd,'cascade')));
 addpath(genpath(fullfile(pwd,'../toolbox_graph')));
 addpath(genpath(fullfile(pwd,'../minFunc')));
+addpath(genpath(fullfile(pwd,'../geom3d')));
 addpath(pwd);
 
 % addpath(genpath('C:\Users\luvegood\Documents\MATLAB\minFunc\minFunc'));

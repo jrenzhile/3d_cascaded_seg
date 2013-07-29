@@ -1,0 +1,8 @@
+function face_area = computeFaceArea(vertex, face)
+
+face_area = zeros(size(face, 2), 1);
+
+for i = 1:length(face_area)
+    
+end
+
