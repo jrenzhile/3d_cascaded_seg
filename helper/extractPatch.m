@@ -1,6 +1,6 @@
 function [vertex, face] = extractPatch(face, seginfo, i)
 
-% function [face] = extractPatch(vertex, face, seginfo, i)
+% function [vertex, face] = extractPatch(face, seginfo, i)
 % Extract the vertex and face of a segment of the model. 
 % 
 % Zhile Ren<jrenzhile@gmail.com>

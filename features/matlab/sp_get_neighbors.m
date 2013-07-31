@@ -19,7 +19,7 @@ end
 
 
 sp_neighbor_matrix = ...
-    sparse(length(unique(seginfo)), length(unique(seginfo)));
+    sparse(max(seginfo), max(seginfo));
 
 
 for i = 1:size(face,2)

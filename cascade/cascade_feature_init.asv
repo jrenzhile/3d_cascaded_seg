@@ -111,7 +111,7 @@ for i = 1:length(mod_all)
     
     total_time=toc(tottime);
     if (verbose > 0)
-      fprintf('Processing %d, Total time %.4fsec\n\n',mod_all(i),total_time);
+      fprintf('Processing %d, Total time %.4fsec\n',mod_all(i),total_time);
     end
     
     save(sprintf('%s/cascade_init/%d',modeldir,mod_all(i)), ...
