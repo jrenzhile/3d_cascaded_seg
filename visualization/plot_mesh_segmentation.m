@@ -17,6 +17,7 @@ h = patch('vertices',vertex,'faces',face,'FaceVertexCData',face_vertex_color, 'F
 
 set(h,'EdgeColor','none');
 
+colormap(lines);
 
 axis off;
 axis image;

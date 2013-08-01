@@ -18,5 +18,5 @@ for i = 1:length(uniq_ind)
     face_i = face(:,seginfo==uniq_ind(i));
     uniq_vertex = unique(face_i(:));
     vertex_i   =vertex(:,uniq_vertex);
-    bboxMatrix(i,:) =  boundingBox3d(vertex_i');
+    bboxMatrix(uniq_ind(i),:) =  boundingBox3d(vertex_i');
 end

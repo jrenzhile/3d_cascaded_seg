@@ -14,7 +14,7 @@ verbose = 1;
 for i = 1:length(mod_all)
     tottime = tic;
     load(sprintf('%s/%d_%d.mat',segdir,mod_all(i),sp_num));
-    vertex = vertex/max(vertex(:));
+    vertex = vertex/max(abs(vertex(:)));
     if min(seginfo)==0
         seginfo = seginfo+1;
     end
@@ -33,6 +33,7 @@ for i = 1:length(mod_all)
     unary(2).dim = 3;
     unary(2).method=@spAvgNorm;
     unary(2).params={avgNormMatrix};
+        
 
 
     pairwise(1).name='mBoundingBox';
@@ -46,6 +47,8 @@ for i = 1:length(mod_all)
     pairwise(2).method=@spCosNorm;
     pairwise(2).unary='avgNorm';
     pairwise(2).params={};
+    
+    
     
     [unary,pairwise]=fixFeaturePtr(unary,pairwise);
     
@@ -61,14 +64,19 @@ for i = 1:length(mod_all)
     for u=1:length(unary)
         utime=tic;
         for s=1:snum
-                U(s,udim{u}) = unary(u).method(s, seginfo, vertex, face,unary(u).params{:});
+                U(s,udim{u}) = ...
+                    unary(u).method(s, seginfo, vertex, face,unary(u).params{:});
         end
         if (verbose)
             fprintf('Computing %s : %.4fsec\n',unary(u).name,toc(utime));
         end
     end
     
+    spNeighbor_time = tic;
     sp_neighbors = sp_get_neighbors(face, seginfo);
+    if (verbose)
+            fprintf('Computing neighbors : %.4fsec\n',toc(spNeighbor_time));
+    end
     
     if ~isempty(sp_neighbors)
         pdim = cell(1,length(pairwise));
@@ -108,6 +116,10 @@ for i = 1:length(mod_all)
     segstruct.pairwise=pairwise;
     segstruct.sp_neighbors=sp_neighbors;
     segstruct.snum = snum;
+    segstruct.faceNorm = faceNorm;
+    segstruct.faceArea = faceArea;
+    segstruct.bboxMatrix = bboxMatrix;
+    
     
     total_time=toc(tottime);
     if (verbose > 0)
@@ -115,7 +127,5 @@ for i = 1:length(mod_all)
     end
     
     save(sprintf('%s/cascade_init/%d',modeldir,mod_all(i)), ...
-        'segstruct','vertex','face','seginfo','faceNorm','faceArea');
-    
-    
+        'segstruct','vertex','face','seginfo');
 end

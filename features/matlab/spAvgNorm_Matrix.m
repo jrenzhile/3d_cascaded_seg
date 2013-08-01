@@ -31,5 +31,5 @@ for i = 1:length(uniq_ind)
     face_area_i = faceArea(face_ind);
     face_area_i_proportion = face_area_i/sum(face_area_i);
     face_norm_i = faceNorm(:,face_ind);
-    avgNormMatrix(:,i) = face_norm_i * face_area_i_proportion;
+    avgNormMatrix(:,uniq_ind(i)) = face_norm_i * face_area_i_proportion;
 end
