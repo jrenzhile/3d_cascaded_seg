@@ -1,6 +1,15 @@
 function newsegstruct = ...
     updateFeatures(vertex, face,seginfo, segstruct, verbose)
 
+% function newsegstruct = updateFeatures(vertex, face,seginfo, segstruct, verbose)
+% Update the features.
+%
+% Zhile Ren<jrenzhile@gmail.com>
+% Aug, 2013
+
+
+
+
 tot_time = tic;
 if verbose
     fprintf('Updating Features\n');
@@ -40,7 +49,7 @@ end
 
 
 if ~isempty(sp_neighbors)
-    pdim = cell(1,length(pairwise));
+     pdim = cell(1,length(pairwise));
     d = 0;
     for p = 1:length(pairwise)
         pdim{p} = d + 1:d + pairwise(p).dim;

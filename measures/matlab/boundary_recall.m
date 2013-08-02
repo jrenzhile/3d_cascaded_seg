@@ -1,5 +1,13 @@
 function br = boundary_recall(vertex, face, seginfo, gtinfo, tolerance)
 
+% uniq_seg = unique(seginfo);
+% new_seg = zeros(1,length(uniq_seg));
+% 
+% for i = 1:length(uniq_seg)
+%     new_seg(i) = ...
+%         sp_maxCoverGroundTruth(face,uniq_seg(i), seginfo, gtinfo);
+% end
+
 edge_seg = extractBoundary(vertex, face, seginfo);
 edge_gt = extractBoundary(vertex,face, gtinfo);
 

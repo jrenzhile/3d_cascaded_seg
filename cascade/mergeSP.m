@@ -1,5 +1,5 @@
 function [cluster_matrix seginfo segstruct] = ...
-    mergeSP(vertex, face, segstruct, ...
+    mergeSP(vertex, face, segstruct, seginfo, ...
     theta, mu, sigma, tau, update, verbose)
 
 cluster_time = tic;
@@ -10,8 +10,8 @@ Ps = bsxfun(@rdivide,bsxfun(@minus,segstruct.P,mu),sigma);
 Ps = [ones(size(Ps,1),1) Ps];
 
 Pg_hat = sigmoid(Ps*theta);
-PgMatrix(sub2ind(size(PgMatrix),segstruct.neighbors(:,1), ...
-                 segstruct.neighbors(:,2)))=Pg_hat;
+PgMatrix(sub2ind(size(PgMatrix),segstruct.sp_neighbors(:,1), ...
+                 segstruct.sp_neighbors(:,2)))=Pg_hat;
 
 
 iterations = 0;
@@ -47,5 +47,5 @@ end
 
 
 if update
-    segstruct = updateFeatures(vertex, face,seginfo, segstruct);
+    segstruct = updateFeatures(vertex, face,seginfo, segstruct,verbose);
 end
