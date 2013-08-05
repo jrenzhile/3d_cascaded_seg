@@ -120,6 +120,15 @@ for i = 1:length(mod_all)
     segstruct.faceArea = faceArea;
     segstruct.bboxMatrix = bboxMatrix;
     
+    gt_models = rdir(sprintf('%s\\%d',gtdir, mod_all(i)));
+    gt_cell = cell(1, length(gt_models));
+    for j = 1:length(gt_cell)
+        gtinfo = load(gt_models(j).name);
+        if min(gtinfo)==0
+            gtinfo = gtinfo+1;
+        end
+        gt_cell{j} = gtinfo;
+    end
     
     total_time=toc(tottime);
     if (verbose > 0)
@@ -127,5 +136,5 @@ for i = 1:length(mod_all)
     end
     
     save(sprintf('%s/cascade_init/%d',modeldir,mod_all(i)), ...
-        'segstruct','vertex','face','seginfo');
+        'segstruct','vertex','face','seginfo','gt_cell');
 end
