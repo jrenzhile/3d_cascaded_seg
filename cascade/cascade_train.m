@@ -44,7 +44,7 @@ for step = 1:steps
     end
     
     [X y] = ...
-        construct_feature_vector(infoAll, mod_to_train,truc_pct, verbose);
+        construct_feature_vector(infoAll, mod_to_train(img2train),truc_pct, verbose);
     X(isnan(X)) = 0;
     initial_theta = zeros(size(X, 2)+1, 1);
     [X,mu,sigma]=featureNormalize(X);
@@ -56,7 +56,7 @@ for step = 1:steps
     
      save('learned_data','theta_matrix', 'mu_matrix', 'sigma_matrix');
     
-     for i = 2:length(mod_to_train)
+     for i = 1:length(mod_to_train)
        seginfo = infoAll{mod_to_train(i)}.seginfo;
        segstruct = infoAll{mod_to_train(i)}.segstruct;
        vertex = infoAll{mod_to_train(i)}.vertex;
