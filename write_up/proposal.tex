@@ -5,6 +5,7 @@
 \usepackage{graphicx}
 \usepackage[CJKbookmarks=true,colorlinks,linkcolor=black,anchorcolor=blue,citecolor=blue, urlcolor = blue]{hyperref}
 \usepackage{ctex}
+\usepackage{url} 
 \usepackage{algorithmic}
 \usepackage{appendix}
 \newcounter{algorithmbis}
@@ -69,15 +70,18 @@ $$Distance(V_i, V_j)= min_{V_3 \neq V_1,V_2}(Distance(V_1, V_3)+Distance(V_3,V_2
 \ENDWHILE
 \end{algorithmic}
 
-
+super patch的代码（包括training）在3d\_cascaded\_seg/super\_patch中。
 
 \section{Super-Patch Merging}
 
 \subsection{Boundary Recall Measurement}
-To be continued..
+受\cite{achanta2010slic}中二维图片measurement的启发，我们定义三维mesh的boundary recall如下：
+\begin{equation}
+  
+\end{equation}
+计算两个线段的距离的时候，我们利用\cite{LineDist}中的方法（helper/DistBetween2LineSegment\_mex.mex）
 
 \subsection{Cascaded algorithm for super-patch agglomeration}
-To be continued..
 
 
 

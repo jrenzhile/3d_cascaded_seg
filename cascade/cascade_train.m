@@ -7,7 +7,7 @@ mod_to_val = load(sprintf('%s/../val.txt',modeldir));
 mod_all = sort([mod_to_train;mod_to_test;mod_to_val]);
 
 verbose = 1;
-steps = 10;
+steps = 30;
 
 br_tolerance = 0.02;
 num_training = 100;
@@ -31,7 +31,7 @@ theta_matrix = cell(1, steps);
 mu_matrix =  cell(1, steps);
 sigma_matrix =  cell(1, steps);
 
-for step = 1:steps
+for step = 11:steps
     step_start = tic;
     img2train = randperm(length(mod_to_train),num_training); % Training Image
     imgleft = setdiff(1:length(mod_to_train),img2train);
@@ -57,6 +57,8 @@ for step = 1:steps
      save('learned_data','theta_matrix', 'mu_matrix', 'sigma_matrix');
     
      for i = 1:length(mod_to_train)
+         merge_time = tic;
+         fprintf('Merging Model %d, Step %d\n', i, step);
        seginfo = infoAll{mod_to_train(i)}.seginfo;
        segstruct = infoAll{mod_to_train(i)}.segstruct;
        vertex = infoAll{mod_to_train(i)}.vertex;
@@ -64,11 +66,12 @@ for step = 1:steps
        update = 1;
        [cluster_matrix seginfo segstruct] = ...
     mergeSP(vertex, face, segstruct, seginfo, ...
-    theta, mu, sigma, tau, update, verbose);         
+    theta, mu, sigma, tau, update, 0);         
         infoAll{mod_to_train(i)}.seginfo = seginfo;
         infoAll{mod_to_train(i)}.segstruct  = segstruct;
         infoAll{mod_to_train(i)}.cluster_matrix = ...
             [infoAll{mod_to_train(i)}.cluster_matrix; cluster_matrix];
+         fprintf('Done Merging Model %d, %.2fs\n', i, toc(merge_time));
      end
 
      fprintf(' STEP %d: %.4fsec\n',step,toc(step_start));
