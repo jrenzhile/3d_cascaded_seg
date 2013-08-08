@@ -14,7 +14,16 @@ Demo: Super-Patch Algorithm
 
 Demo: Cascaded Segmentation
 ---------------
-TBA
+1. load a model in meshsegBenchmark-1.0/data/seg/off/cascade_init
+2. load learned_data.mat
+3. tau = 0.5; verbose = 1;
+4. run [cluster_matrix seginfo_matrix]= ...
+    cascade_main(vertex, face, segstruct, seginfo, theta_matrix, mu_matrix, sigma_matrix, tau, verbose);
+5. for i = 1:30
+    h = plot_mesh_segmentation(vertex,face,seginfo_matrix{i})
+   end
+
+
 
 Directories:
 ---------------
@@ -25,6 +34,7 @@ Directories:
 * /others: other functions for regular use.
 * /visualization: functions to plot the segmentation results
 * /super_patch: algorithms for super_patch calculation.
+* /cascade: functions to train/run the cascade agglomeration algorithm
 
 
 Explanation of the  data structures:

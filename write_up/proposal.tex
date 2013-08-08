@@ -5,7 +5,35 @@
 \usepackage{graphicx}
 \usepackage[CJKbookmarks=true,colorlinks,linkcolor=black,anchorcolor=blue,citecolor=blue, urlcolor = blue]{hyperref}
 \usepackage{ctex}
-\usepackage{url} 
+\usepackage{times}
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{stmaryrd}
+\usepackage{cases}
+\usepackage{bbm}
+\usepackage{upgreek}
+\usepackage{bm}
+
+\usepackage{xspace}
+\usepackage{comment}
+\usepackage{multirow}
+
+\usepackage{sidecap}
+
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\makeatletter
+\newcommand{\bfgreek}[1]{\bm{\@nameuse{#1}}}
+\makeatother
+
+
+\DeclareMathOperator*{\argmin}{argmin}
+\DeclareMathOperator*{\argmax}{argmax}
+
+\usepackage{url}
 \usepackage{algorithmic}
 \usepackage{appendix}
 \newcounter{algorithmbis}
@@ -77,11 +105,42 @@ super patch的代码（包括training）在3d\_cascaded\_seg/super\_patch中。
 \subsection{Boundary Recall Measurement}
 受\cite{achanta2010slic}中二维图片measurement的启发，我们定义三维mesh的boundary recall如下：
 \begin{equation}
-  
+ BR_G(S) = \frac{\sum_{p \in \partial G}\mathbbm{1}(\min_{q \in \partial S}distance(p, q)<\epsilon)}{\partial G}
 \end{equation}
-计算两个线段的距离的时候，我们利用\cite{LineDist}中的方法（helper/DistBetween2LineSegment\_mex.mex）
+其中G为ground truth segmentation, S 为machine segmentation, $\partial$表示分割的边缘(boundary)。对于3D mesh，定义两两vertex之间的edge作为boundary，这样
+一个segmentation的边缘就由很多线段组成。将每条线段类比为2D中的pixel，2D中两个pixel之间的距离可以直接计算，而计算两个线段的距离的时候，我们利用\cite{LineDist}中的方法（helper/DistBetween2LineSegment\_mex.mex）
 
+这个measurement数值越大说明真实的边缘检测出来的比例越多。
+
+$\bigstar$我写的计算这个measurement的代码复杂度是$O(\partial G*\partial S)$，因此计算速度极慢，不知道能不能写一个更快的算法，因为速度原因在cascade training的时候也收到了很大的影响。
+
+\subsection{other measurements}
+其他的measurement包括rand index(有代码), Cut Discrepancy, Hamming Distance等等。其中rand index是很多3D segmentation paper中都使用的度量。这个度量的计算写出的代码运行可以很快(randindex.cpp)。
 \subsection{Cascaded algorithm for super-patch agglomeration}
+这部分的思路主要借鉴\cite{cascade_CVPR}。将每个super-patch对应于文中的super-pixel。
+对于一个3D Model $I_i$, 我们将其分为$k_i$个super-patch$R_i = \{R_{i,1}, ..., R_{i,k_i}\}$，再令$N(R_i)$为所有的相邻区域。每一个区域对$(p,q)\in N(R_i)$ 都由一个表示特征的向量$\phi_{p,q}(I_i, R_i)$组成。具体使用的特征在section \ref{featureSelection}中会介绍。
+
+我们同时也有ground truth的数据，它们将作为训练样本。这些真实的分割数据是以带标签的3D模型表示的，由于我们不假定任何类别信息，所以我们仅仅需要得到的信息是：任意一对像素是否属于同一区域。
+
+利用模型$I$的真实分割的数据，我们可以给$N(R_i)$中的区域对加上标签：任给一个真实分割图$G_i$，我们将$R_{i,p}$标定为$G_i$中与它重合最大的区域的标签。接下来，如果$R_{i,p}$与$R_{i,q}$的标签是相同的，则定义$y_{pq}^i = 1$，否则$y_{pq}^i = 0$。如果对于一张图有很多的真实分割，则定义$y_{pq}^i$为针对所有真实分割定义标签的平均。这样$y_{pq}^i$的值就在0和1之间，度量了人们认为$R_{i,p}$和$R_{i,q}$相同的概率，同时也反映了区域之间边缘的强度。
+
+将训练样本$I_1, ...,  I_N$中区域对的特征和他们的标签放在一起，我们得到$\{<\phi_i, y_i>\}$，这样就是一个预测问题：给定一个区域$I$和初始分割$R$，估计相邻区域聚合的条件后验概率为$Pg(p,q;I,R) \triangleq = P(y_{pq}=1 | \phi_{pq}(I, R))$。如果$Pg(p,q;I,R)>\frac{1}{2}$，则我们必须聚合$R_p$和$R_q$，并且将它们之间的边缘去掉，否则我们将保留边缘。
+
+\subsubsection{features between neighboring superpixels}
+\label{featureSelection}
+这里所说的features都是定义在相邻两个patch $R_{i,q}$上的。
+\begin{itemize}
+  \item Bounding Box
+  
+  先计算每个patch $i$的bounding box $b_i$, 在$R_{i,q}$中，定义$b_i \cap b_q$为两个box的相交部分$c_{iq}$，取$\phi_1(i,q) = \max(\frac{volume(b_i)}{volume(c_{iq})}, \frac{volume(b_q)}{volume(c_{iq})})$，此数值在0，1之间，越接近1说明二者的包含关系越明显。（可以将bounding box换为凸包，更精确）
+  \item Average Norm Vector
+  
+  每个mesh i上的法向量为$n_i$，对于每个patch j，定义其平均法向量为所有mesh上的法向量的加权和，权重与每个mesh的面积成正比。
+  
+  \item Others: to be continued..
+\end{itemize}
+
+
 
 
 
@@ -92,7 +151,7 @@ super patch的代码（包括training）在3d\_cascaded\_seg/super\_patch中。
 \addappheadtotoc
 \begin{appendices}
 整个project均在F盘上进行操作。
-\section{数据说明}
+\section{Mesh Segmentation Data}
 \begin{itemize}
   \item Princeton's segmentation dataset 存放在F:/MeshsegBenchmark-1.0 中
   \item data/\{train, test, val\}.txt 分别为training, test, validation set
@@ -103,9 +162,13 @@ super patch的代码（包括training）在3d\_cascaded\_seg/super\_patch中。
 这些是所有需要用到的东西。。
 
 
-\section{代码说明}
+\section{codes}
 代码保存在F:/github/3d\_cascaded\_seg 其中的readme文件介绍了各个目录的组织情况，全部代码在这里托管
 \url{https://github.com/luvegood/3d_cascaded_seg}
+请clone这里的代码，台式机里的代码不一定是最新的。
+同时，代码还依赖其他的toolbox：geom3d(计算bounding box等等都要用到), toolbox_graph(3D 图结构的时候利用), minFunc(learning的时候利用)，均在F:/github中。
+
+
 \end{appendices}
 
 \bibliographystyle{plain}	

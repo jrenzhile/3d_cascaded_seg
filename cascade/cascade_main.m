@@ -3,7 +3,7 @@ function [cluster_matrix seginfo_matrix]= ...
 % function cluster_matrix = ...
 %   cascade_main(vertex, face, segstruct, seginfo, theta_matrix, mu_matrix, sigma_matrix, tau, verbose)
 % 
-% Perform cascade agglomeration.
+% Perform cascade agglomeration after we got the learned data.
 % Zhile Ren <jrenzhile@gmail.com>
 % Aug, 2013
 

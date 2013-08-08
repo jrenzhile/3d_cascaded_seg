@@ -1,8 +1,8 @@
-function sp_neighbors = sp_get_neighbors(face, seginfo,neighbors)
+function [sp_neighbors neighbors]= sp_get_neighbors(face, seginfo,neighbors)
 
-% function sp_neighbor_matrix = sp_get_neighbors(vertex, face, seginfo,neighbors)
-% Get the list of neighbors for super-patch segmentation. 
-% the variable neighbors is got by getNeighbor(face)
+% function [sp_neighbors neighbors] = sp_get_neighbors(face, seginfo,neighbors)
+% Get the list of neighbors for super-patch segmentation. also return the 
+% neighbors variable computed by function getNeighbor
 % 
 % Zhile Ren<jrenzhile@gmail.com>
 % Jul, 2013

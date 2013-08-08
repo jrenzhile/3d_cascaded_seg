@@ -1,3 +1,5 @@
+
+%%%%%%%%%% Specify the directoies/parameters  %%%%%%%%%%
 modeldir = 'F:/meshsegBenchmark-1.0/data/off';
 gtdir = sprintf('F:/meshsegBenchmark-1.0/data/seg/Benchmark');
 featuredir = sprintf('%s/system1',modeldir);
@@ -14,10 +16,11 @@ num_training = 100;
 num_val = 30;
 tau = 0.5;
 
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 tot_time = tic;
 
+% Store all the model data into this structure
 infoAll = cell(1,max(mod_to_train));
 for i = 1:length(mod_to_train)
     seg = load(sprintf('%s/%d.mat', featuredir, mod_to_train(i)));
@@ -42,20 +45,29 @@ for step = 11:steps
     else
         truc_pct = 0.01;
     end
-    
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%    Learning %%%%%%%%%%%%%%%%%%%%
     [X y] = ...
         construct_feature_vector(infoAll, mod_to_train(img2train),truc_pct, verbose);
     X(isnan(X)) = 0;
     initial_theta = zeros(size(X, 2)+1, 1);
     [X,mu,sigma]=featureNormalize(X);
-    alpha = 1;
+    
+    % We should add a function to select optimal alpha for each stage
+    % Sadly, my code for computing boundary recall is sooooo slow.
+    % If it's fast, we must import it here.
+    alpha = 1; % Alpha should be greater than 1, in order to penalize the loss in boundary recall
     [theta] = Logistic_Regression(X,y,alpha,initial_theta, verbose);
+    %%%
+    
     theta_matrix{step} = theta;
     mu_matrix{step} =  mu;
     sigma_matrix{step} = sigma;
     
-     save('learned_data','theta_matrix', 'mu_matrix', 'sigma_matrix');
-    
+    save('learned_data','theta_matrix', 'mu_matrix', 'sigma_matrix');
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%  Merge for one stage %%%%%%%%%%%%%%%%%%%%%
      for i = 1:length(mod_to_train)
          merge_time = tic;
          fprintf('Merging Model %d, Step %d\n', i, step);
@@ -75,7 +87,7 @@ for step = 11:steps
      end
 
      fprintf(' STEP %d: %.4fsec\n',step,toc(step_start));
-     
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%     
 end
 
 if verbose

@@ -20,10 +20,20 @@ D.~Martin, C.~Fowlkes, D.~Tal, and J.~Malik.
 \newblock In {\em Proc. 8th Int'l Conf. Computer Vision}, volume~2, pages
   416--423, July 2001.
 
+\bibitem{cascade_CVPR}
+Zhile Ren and Gregory Shakhnarovich.
+\newblock Image segmentation by cascaded region agglomeration.
+\newblock June 2013.
+
 \bibitem{shlafman2003metamorphosis}
 Shymon Shlafman, Ayellet Tal, and Sagi Katz.
 \newblock Metamorphosis of polyhedral surfaces using decomposition.
 \newblock In {\em Computer Graphics Forum}, volume~21, pages 219--228. Wiley
   Online Library, 2003.
+
+\bibitem{LineDist}
+Dan Sunday.
+\newblock Distance between 3d lines and segments.
+\newblock \url{http://geomalgorithms.com/a07-_distance.html}.
 
 \end{thebibliography}
