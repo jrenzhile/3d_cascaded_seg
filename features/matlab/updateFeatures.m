@@ -8,7 +8,7 @@ function newsegstruct = ...
 % Aug, 2013
 
 
-
+% The main idea here is similar to the cascade_feature_init function
 
 tot_time = tic;
 if verbose

@@ -2,9 +2,24 @@ function [cluster_matrix seginfo segstruct] = ...
     mergeSP(vertex, face, segstruct, seginfo, ...
     theta, mu, sigma, tau, update, verbose)
 
+% function [cluster_matrix seginfo segstruct] = ...
+%    mergeSP(vertex, face, segstruct, seginfo, ...
+%    theta, mu, sigma, tau, update, verbose)
+%
+% A single stage of agglomeration. cluster_matrix records the patches
+% that should be merged in each step. 
+% if update = 1, then we'll recompute the features and update it
+% in segstruct(used for future merging), otherwise we won't do it
+% in order to save time. (such as in one stage of the training)
+%
+% Zhile Ren <jrenzhile@gmail.com>
+% Aug, 2013
+
+
 cluster_time = tic;
 sp_num = max(seginfo);
 
+% Construct PG matrix
 PgMatrix  = zeros(sp_num ,sp_num);
 Ps = bsxfun(@rdivide,bsxfun(@minus,segstruct.P,mu),sigma);
 Ps = [ones(size(Ps,1),1) Ps];

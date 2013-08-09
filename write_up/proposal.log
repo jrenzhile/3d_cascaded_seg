@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2013.3.23)  8 AUG 2013 14:49
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2013.3.23)  9 AUG 2013 13:32
 entering extended mode
 **D:/github/3d_cascaded_seg/write_up/proposal.tex
 (D:/github/3d_cascaded_seg/write_up/proposal.tex
@@ -784,34 +784,45 @@ Underfull \hbox (badness 10000) in paragraph at lines 109--112
  []
 
 
-Overfull \hbox (13.28847pt too wide) in paragraph at lines 120--122
-\OT1/ptm/m/n/12 pixel|\C19/rm/m/n/12/25 "| \C19/rm/m/n/12/40 È \C19/rm/m/n/12/6
-2 u \C19/rm/m/n/12/61 ò \C19/rm/m/n/12/42 á\OT1/ptm/m/n/12 3D Mod-el $\OML/cmm/
-m/it/12 I[]$\OT1/ptm/m/n/12 , \C19/rm/m/n/12/58 ∑ \C19/rm/m/n/12/50 Ç \C19/rm/m
-/n/12/45 Ú \C19/rm/m/n/12/52 Ÿ \C19/rm/m/n/12/41 © \C19/rm/m/n/12/58 è$\OML/cmm
-/m/it/12 k[]$\C19/rm/m/n/12/42 á\OT1/ptm/m/n/12 super-patch$\OML/cmm/m/it/12 R[
-] \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 f\OML/cmm/m/it/12 R[]; :::; R[]\OMS/cmsy/m
-/n/12 g$|\C19/rm/m/n/12/26 ß|
+Overfull \hbox (2.66875pt too wide) in paragraph at lines 122--123
+[]\C19/rm/m/n/12/40 È \C19/rm/m/n/12/62 u \C19/rm/m/n/12/61 ò \C19/rm/m/n/12/42
+ á\OT1/ptm/m/n/12 3D Mod-el $\OML/cmm/m/it/12 I[]$\OT1/ptm/m/n/12 , \C19/rm/m/n
+/12/58 ∑ \C19/rm/m/n/12/50 Ç \C19/rm/m/n/12/45 Ú \C19/rm/m/n/12/52 Ÿ \C19/rm/m/
+n/12/41 © \C19/rm/m/n/12/58 è$\OML/cmm/m/it/12 k[]$\C19/rm/m/n/12/42 á\OT1/ptm/
+m/n/12 super-patch$\OML/cmm/m/it/12 R[] \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 f\OM
+L/cmm/m/it/12 R[]; :::; R[]\OMS/cmsy/m/n/12 g$|\C19/rm/m/n/12/26 ß|
  []
 
 [3]
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 133.
+Overfull \hbox (28.99869pt too wide) in paragraph at lines 136--137
+\C19/rm/m/n/12/46 = = \C19/rm/m/n/12/62 k \C19/rm/m/n/12/61 ò \C19/rm/m/n/12/60
+  \C19/rm/m/n/12/37 ‹ \C19/rm/m/n/12/41 ©$\OML/cmm/m/it/12 N\OT1/cmr/m/n/12 (\
+OML/cmm/m/it/12 R\OT1/cmr/m/n/12 )$\C19/rm/m/n/12/64 • \C19/rm/m/n/12/40  \C19
+/rm/m/n/12/53 ´ \C19/rm/m/n/12/62 ç \C19/rm/m/n/12/40 È \C19/rm/m/n/12/58 è\OT1
+/ptm/m/n/12 true neg-a-tive|\C19/rm/m/n/12/26 ß| \C19/rm/m/n/12/61 œ \C19/rm/m/
+n/12/58 è \C19/rm/m/n/12/39 å \C19/rm/m/n/12/37 ‹ \C19/rm/m/n/12/41 © \C19/rm/m
+/n/12/59 É \C19/rm/m/n/12/49  \C19/rm/m/n/12/40 \OT1/ptm/m/n/12 superpixels\C
+19/rm/m/n/12/62 A
+ []
+
+[4] [5]
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 165.
 
  (C:\CTEX\MiKTeX\tex\latex\psnfss\omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 133.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 165.
+ [6]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24.88> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 144.
- [4]
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 161.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 186.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 203.
 
 
 (C:\CTEX\MiKTeX\tex\latex\psnfss\ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
-Overfull \hbox (2.40002pt too wide) in paragraph at lines 160--164
+Overfull \hbox (2.40002pt too wide) in paragraph at lines 202--206
 \C19/rm/m/n/12/49 π \C19/rm/m/n/12/40  \C19/rm/m/n/12/65 | \C19/rm/m/n/12/64 Ñ
  \C19/rm/m/n/12/53 ú \C19/rm/m/n/12/47 π|\C19/rm/m/n/12/26 ß| \C19/rm/m/n/12/54
   \C19/rm/m/n/12/37 ‹ \C19/rm/m/n/12/39 ì \C19/rm/m/n/12/49 Ë \C19/rm/m/n/12/6
@@ -819,33 +830,33 @@ Overfull \hbox (2.40002pt too wide) in paragraph at lines 160--164
 m/n/12 https : / / github . com / luvegood /$
  []
 
-(D:\github\3d_cascaded_seg\write_up\proposal.bbl [5]
+(D:\github\3d_cascaded_seg\write_up\proposal.bbl [7]
 Underfull \hbox (badness 1365) in paragraph at lines 35--38
 []\OT1/ptm/m/n/12 Dan Sun-day.  Dis-tance be-tween 3d lines and seg-ments.  [][
 ]$\OT1/pcr/m/n/12 http : / /$
  []
 
-) [6]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 167.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 167.
+) [8]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 212.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 212.
  (D:\github\3d_cascaded_seg\write_up\proposal.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 167.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 167.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 212.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 212.
 Package rerunfilecheck Info: File `proposal.out' has not changed.
-(rerunfilecheck)             Checksum: C904821F143D3F2625A2C44F3A7EAB36;719.
+(rerunfilecheck)             Checksum: 96FCA1D58FD762EF5E1C1A843E8F4D6F;927.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 14102 strings out of 495354
- 215910 string characters out of 3183859
- 285795 words of memory out of 3000000
- 16895 multiletter control sequences out of 15000+200000
+ 14234 strings out of 495354
+ 218332 string characters out of 3183859
+ 292830 words of memory out of 3000000
+ 17021 multiletter control sequences out of 15000+200000
  36296 words of font info for 104 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 34i,6n,43p,873b,981s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 34i,6n,43p,873b,923s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/CTEX/MiKTeX/fonts/enc/dvips/fontname/8r.enc}<C:/Windows/Fonts/simhei.ttf>
 <C:/Windows/Fonts/simhei.ttf> <C:\CTEX\UserData\fonts\pk\ljfour\public\bbm\dpi6
 00\bbm12.pk><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windo
@@ -860,19 +871,21 @@ imsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows
 /Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun
 .ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Font
 s/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/CTEX
-/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/CTEX/MiKTeX/fonts/type1/p
-ublic/amsfonts/cm/cmmi12.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmm
-i6.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/CTEX/MiKTeX
-/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/CTEX/MiKTeX/fonts/type1/public/am
-sfonts/cm/cmr6.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/
-CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/CTEX/MiKTeX/fonts/typ
-e1/public/amsfonts/cm/cmsy8.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/sym
-bols/msam10.pfb><C:/CTEX/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/CTEX/MiK
-TeX/fonts/type1/urw/times/utmb8a.pfb><C:/CTEX/MiKTeX/fonts/type1/urw/times/utmr
-8a.pfb><C:/CTEX/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on proposal.pdf (6 pages, 322473 bytes).
+/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/CTEX/MiKTeX/fonts/type1/p
+ublic/amsfonts/cm/cmbx8.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmex
+10.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/CTEX/MiKTe
+X/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/CTEX/MiKTeX/fonts/type1/public/a
+msfonts/cm/cmmi8.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmmib10.pfb
+><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/CTEX/MiKTeX/fonts
+/type1/public/amsfonts/cm/cmr6.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/
+cm/cmr8.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/CTEX/
+MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/CTEX/MiKTeX/fonts/type1/pub
+lic/amsfonts/symbols/msam10.pfb><C:/CTEX/MiKTeX/fonts/type1/urw/courier/ucrr8a.
+pfb><C:/CTEX/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/CTEX/MiKTeX/fonts/type
+1/urw/times/utmr8a.pfb><C:/CTEX/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
+Output written on proposal.pdf (8 pages, 380800 bytes).
 PDF statistics:
- 321 PDF objects out of 1000 (max. 8388607)
- 43 named destinations out of 1000 (max. 500000)
- 89 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 361 PDF objects out of 1000 (max. 8388607)
+ 49 named destinations out of 1000 (max. 500000)
+ 113 words of extra memory for PDF output out of 10000 (max. 10000000)
 

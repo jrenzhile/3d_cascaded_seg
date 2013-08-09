@@ -1,5 +1,12 @@
 function gt = spGroundTruth(s1, s2, seginfo, gt_cell, face)
 
+% function gt = spGroundTruth(s1, s2, seginfo, gt_cell, face)
+% compute the ground truth similarity of patch s1 and s2.
+% if they are in the same region, gt = 1, and 0 otherwise
+%
+% Zhile Ren <jrenzhile@gmail.com>
+% Aug, 2013
+
 gt_all  = zeros(1, length(gt_cell));
 for i = 1:length(gt_all)
     gtinfo  = gt_cell{i};

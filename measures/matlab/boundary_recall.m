@@ -1,5 +1,15 @@
 function br = boundary_recall(vertex, face, seginfo, gtinfo, tolerance)
 
+% function br = boundary_recall(vertex, face, seginfo, gtinfo, tolerance)
+% compute boundary recall 
+%
+% Zhile Ren <jrenzhile@gmail.com>
+% Aug, 2013
+
+
+
+
+
 % uniq_seg = unique(seginfo);
 % new_seg = zeros(1,length(uniq_seg));
 % 
